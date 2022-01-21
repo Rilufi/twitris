@@ -1,6 +1,12 @@
 # twitris
 
-A bot that lets [Twitter play Tetris](http://twitter.com/twitrisbot). [Faster version](https://observablehq.com/@chriszs/emojitris) on Observable.
+A bot that lets [Twitter play Tetris](http://twitter.com/rilufix). [Faster version](https://observablehq.com/@chriszs/emojitris) on Observable.
+
+## This fork
+
+Included some python code for my other 6 bots to comment random commands for the next step of the game. 
+
+## How to run
 
 Runs a GitHub Action to tweet on an interval. Reads and saves game state to the `save` branch.
 
