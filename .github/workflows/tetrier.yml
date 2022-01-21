@@ -1,11 +1,11 @@
 name: tetrier
 
 
-on: 
+on: push
 
-    schedule:
+   # schedule:
 
-        - cron: "*/45 * * * *"
+     #   - cron: "*/45 * * * *"
 
 jobs:
 
