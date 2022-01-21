@@ -1,11 +1,11 @@
 name: tetrier
 
 
-on: push
+on:
 
-   # schedule:
+    schedule:
 
-     #   - cron: "*/45 * * * *"
+        - cron: "*/45 * * * *"
 
 jobs:
 
@@ -40,8 +40,41 @@ jobs:
                   envkey_ACCESS_TOKEN_COR: ${{ secrets.ACCESS_TOKEN_COR }}
 
                   envkey_ACCESS_TOKEN_SECRET_COR: ${{ secrets.ACCESS_TOKEN_SECRET_COR }}
+		 
+                  envkey_CONSUMER_KEY_GATO: ${{ secrets.CONSUMER_KEY_GATO }}
+
+                  envkey_CONSUMER_SECRET_GATO: ${{ secrets.CONSUMER_SECRET_GATO }}
+
+                  envkey_ACCESS_TOKEN_GATO: ${{ secrets.ACCESS_TOKEN_GATO }}
+
+                  envkey_ACCESS_TOKEN_SECRET_GATO: ${{ secrets.ACCESS_TOKEN_SECRET_GATO }}
+
+                  envkey_CONSUMER_KEY_NASO: ${{ secrets.CONSUMER_KEY_NASO }}
+
+                  envkey_CONSUMER_SECRET_NASO: ${{ secrets.CONSUMER_SECRET_NASO }}
+
+                  envkey_ACCESS_TOKEN_NASO: ${{ secrets.ACCESS_TOKEN_NASO }}
+
+                  envkey_ACCESS_TOKEN_SECRET_NASO: ${{ secrets.ACCESS_TOKEN_SECRET_NASO }}
+
+                  envkey_CONSUMER_KEY_MEVU: ${{ secrets.CONSUMER_KEY_MEVU }}
+
+                  envkey_CONSUMER_SECRET_MEVU: ${{ secrets.CONSUMER_SECRET_MEVU }}
+
+                  envkey_ACCESS_TOKEN_MEVU: ${{ secrets.ACCESS_TOKEN_MEVU }}
+
+                  envkey_ACCESS_TOKEN_SECRET_MEVU: ${{ secrets.ACCESS_TOKEN_SECRET_MEVU }}
+
+                  envkey_CONSUMER_KEY_UVA: ${{ secrets.CONSUMER_KEY_UVA }}
+
+                  envkey_CONSUMER_SECRET_UVA: ${{ secrets.CONSUMER_SECRET_UVA }}
+
+                  envkey_ACCESS_TOKEN_UVA: ${{ secrets.ACCESS_TOKEN_UVA }}
+
+                  envkey_ACCESS_TOKEN_SECRET_UVA: ${{ secrets.ACCESS_TOKEN_SECRET_UVA }}
 
 
+                  file_name: .env
 
 
 
@@ -50,4 +83,4 @@ jobs:
 
 
             - name: Run the script 🚀
-              run: docker-compose -f docker-compose-gato.yml up
+              run: docker-compose -f docker-compose-twitris.yml up
