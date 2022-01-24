@@ -12,14 +12,19 @@ def tetris(api):
 	for tweet in tweets:
 		api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
 
-for bot in bots:
-	try:
-		for info in tweets:
-			if "⬜" in info.full_text:
+for info in tweets:
+	if "⬜" in info.full_text:
+		for bot in bots:
+			try:	
 				tetris(bot)
-			elif "⬛" in info.full_text:
+			except:
+				pass
+	elif "⬛" in info.full_text:
+		for bot in bots:
+			try:	
 				tetris(bot)
-			else:
-				sys.exit()
-	except:
-		pass
+			except:
+				pass
+	else:
+		sys.exit()
+	
