@@ -1,5 +1,6 @@
 from auth import api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato
-import random, sys
+import random
+import sys
 
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
 bots = [api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato]
