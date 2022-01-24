@@ -1,6 +1,19 @@
 import tweepy
 import os
 
+#Rilufi
+
+consumer_key = os.environ["TWITTER_CONSUMER_KEY"]
+consumer_secret = os.environ["TWITTER_CONSUMER_SECRET"]
+access_token = os.environ["TWITTER_ACCESS_TOKEN_KEY"]
+access_token_secret = os.environ["TWITTER_ACCESS_TOKEN_SECRET"]
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+api_ril = tweepy.API(auth, wait_on_rate_limit = True, wait_on_rate_limit_notify = True)
+
+
 #Xamexavu
 
 consumer_key = os.environ["CONSUMER_KEY_XAME"]
