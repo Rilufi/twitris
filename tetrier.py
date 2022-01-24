@@ -10,7 +10,7 @@ def tetris(api):
 	chosen = random.choice(commands)
 	mystring = f""" {chosen}"""
 	
-	if "⬛" or "⬜":
+	if "⬛" or "⬜" in tweets:
 		for tweet in tweets:
 	        	api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
 	else:
