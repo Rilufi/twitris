@@ -1,5 +1,5 @@
 from auth import api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato
-import random
+import random, sys
 
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
 bots = [api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato]
@@ -15,7 +15,7 @@ def tetris(api):
 		for tweet in tweets:
 	        	api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
 	else:
-		pass
+		sys.exit()
 
 for bot in bots:
     tetris(bot)
