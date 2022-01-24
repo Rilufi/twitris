@@ -11,12 +11,15 @@ def tetris(api):
 	mystring = f""" {chosen}"""
 	
 	for info in tweets:
-		if "ArXiv" not in info.full_text:
+		if "⬜" in info.full_text:
+			for tweet in tweets:
+				api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
+		elif "⬛" in info.full_text:
 			for tweet in tweets:
 				api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
 		else:
 			sys.exit()
-
+			
 for bot in bots:
 	try:
 		tetris(bot)
