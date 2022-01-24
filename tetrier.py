@@ -6,15 +6,15 @@ commands = ['⬅️', '➡️', '⤴️', '⬇️']
 bots = [api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato]
 
 def tetris(api):
-	tweets = api.user_timeline(screen_name = "rilufix", count=1)
+	tweets = api.user_timeline(screen_name="rilufix", count=1, exclude_replies = True)
 	chosen = random.choice(commands)
 	mystring = f""" {chosen}"""
 	
-	if "⬛" or "⬜" in tweets:
-		for tweet in tweets:
-	        	api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
-	else:
-		sys.exit()
+	for tweet in tweets:
+		api.update_status("@" + "rilufix" + mystring, in_reply_to_status_id = tweet.id)
 
 for bot in bots:
-    tetris(bot)
+	try:	
+		tetris(bot)
+	except:
+		pass
