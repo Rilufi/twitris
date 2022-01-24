@@ -25,6 +25,14 @@ jobs:
 
               with:
 
+                  envkey_TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+
+                  envkey_TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+
+                  envkey_TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
+
+                  envkey_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
                   envkey_CONSUMER_KEY_XAME: ${{ secrets.CONSUMER_KEY_XAME }}
 
                   envkey_CONSUMER_SECRET_XAME: ${{ secrets.CONSUMER_SECRET_XAME }}
