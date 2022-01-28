@@ -1,9 +1,9 @@
-from auth import api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato, api_ril
+from auth import api_cor, api_naso, api_gato, api_ril
 import random
 import sys
 
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
-bots = [api_xame, api_uva, api_mevu, api_cor, api_naso, api_gato]
+bots = [api_cor, api_naso, api_gato]
 tweets = api_ril.user_timeline(screen_name="rilufix", count=1, exclude_replies = True,  tweet_mode = 'extended')
 
 def tetris(api):
