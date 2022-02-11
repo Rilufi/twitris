@@ -3,7 +3,7 @@ import random
 import sys
 
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
-bots = [api_cor, api_gato]
+bots = [api_cor, api_naso, api_gato]
 tweets = api_ril.user_timeline(screen_name="rilufix", count=1, exclude_replies = True,  tweet_mode = 'extended')
 
 def tetris(api):
