@@ -4,7 +4,7 @@ A bot that lets [Twitter play Tetris](http://twitter.com/rilufix). [Faster versi
 
 ## This fork
 
-Included some python code for my other 6 bots to comment random commands for the next step of the game. 
+Included some python code for my other bots to comment random commands for the next step of the game. 
 
 ## How to run
 
