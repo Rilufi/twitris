@@ -1,6 +1,6 @@
 # twitris
 
-A bot that lets [Twitter play Tetris](http://twitter.com/rilufix). [Faster version](https://observablehq.com/@chriszs/emojitris) on Observable.
+A bot that lets [Twitter play Tetris](http://twitter.com/botoronga). [Faster version](https://observablehq.com/@chriszs/emojitris) on Observable.
 
 ## This fork
 
