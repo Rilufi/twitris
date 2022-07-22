@@ -3,7 +3,7 @@ import random
 import sys
 
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
-bots = [api_cor, api_naso, api_gato]
+bots = [api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
 tweets = api_cor.user_timeline(screen_name="botoronga", count=1, exclude_replies = True,  tweet_mode = 'extended')
 
