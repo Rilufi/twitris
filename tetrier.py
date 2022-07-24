@@ -5,7 +5,7 @@ import sys
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
 bots = [api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
-tweets = api_cor.user_timeline(screen_name="botoronga", count=1, exclude_replies = True,  tweet_mode = 'extended')
+tweets = api_cor.user_timeline(screen_name=api_cor.me().screen_name, count=1, exclude_replies = True,  tweet_mode = 'extended')
 
 def tetris():
 	chosen = random.choice(commands)
