@@ -19,6 +19,6 @@ for info in tweets:
 		try:	
 			tetris()
 		except:
-			passs
+			pass
 	else:
 		sys.exit()
