@@ -2,10 +2,10 @@ name: tetrier
 
 
 on:
-
-    schedule:
-
-        - cron: "*/30 * * * *"
+  workflow_run:
+    workflows: ["tweet"]
+    types:
+      - completed
 
 jobs:
 
