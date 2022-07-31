@@ -2,23 +2,25 @@ from auth import api, api_cor, api_naso, api_gato
 import random
 import sys
 
+toReply = api.me().screen_name
 commands = ['⬅️', '➡️', '⤴️', '⬇️']
 bots = [api_cor, api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
-tweets = api.user_timeline(screen_name=api.me().screen_name, count=1, exclude_replies = True,  tweet_mode = 'extended')
+tweets = api.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
 
-def tetris():
+def tetris(api):
 	chosen = random.choice(commands)
 	mystring = f""" {chosen}"""
 	for tweet in tweets:
-		api_naso.update_status("@" + "botoronga" + mystring, in_reply_to_status_id = tweet.id)
-		api_gato.update_status("@" + "botoronga" + mystring, in_reply_to_status_id = tweet.id)
+		api.update_status("@" + toReply + mystring, in_reply_to_status_id = tweet.id)
+
 
 for info in tweets:
 	if any(block in info.full_text for block in blocks):
-		try:	
-			tetris()
-		except:
-			pass
+		for bot in bots:
+			try:	
+				tetris(bot)
+			except:
+				pass
 	else:
 		sys.exit()
