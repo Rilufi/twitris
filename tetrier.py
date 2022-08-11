@@ -13,6 +13,10 @@ def tetris(api):
 	mystring = f""" {chosen}"""
 	for tweet in tweets:
 		api.update_status("@" + toReply + mystring, in_reply_to_status_id = tweet.id)
+		try:
+			 api.create_favorite(tweet.id)
+		except:
+			pass
 
 
 for info in tweets:
