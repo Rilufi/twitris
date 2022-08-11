@@ -16,6 +16,7 @@ def tetris(api):
 		try:
 			 api.create_favorite(tweet.id)
 		except:
+			print("não rolou "+ api.verify_credentials().screen_name) 
 			pass
 
 
