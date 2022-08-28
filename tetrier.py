@@ -3,7 +3,8 @@ import random
 import sys
 
 toReply = api.me().screen_name
-commands = ['⬅️', '➡️', '⤴️', '⬇️']
+commands = ['⬅️', '➡️', '⤴️']
+#, '⬇️']
 bots = [api_cor, api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
 tweets = api.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
