@@ -1,13 +1,13 @@
-from auth import api, api_cor, api_naso, api_gato
+from auth import api_cor, api_naso, api_gato
 import random
 import sys
 
-toReply = api.me().screen_name
+toReply = api_cor.me().screen_name
 commands = ['⬅️', '➡️', '⤴️']
 #, '⬇️']
 bots = [api_cor, api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
-tweets = api.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
+tweets = api_cor.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
 
 def tetris(api):
     chosen = random.choice(commands)
