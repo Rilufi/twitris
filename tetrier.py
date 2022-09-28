@@ -5,7 +5,7 @@ import sys
 toReply = api_cor.me().screen_name
 commands = ['⬅️', '➡️', '⤴️']
 #, '⬇️']
-bots = [api_naso, api_gato]
+bots = [api_cor, api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
 tweets = api_cor.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
 
