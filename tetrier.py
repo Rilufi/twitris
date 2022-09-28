@@ -10,9 +10,10 @@ bots = [api_cor, api_naso, api_gato]
 blocks = ["🟦", "🟥", "🟨", "🟧", "🟪", "🟩", "🟫"]
 tweets = api_cor.user_timeline(screen_name=toReply, count=1, exclude_replies = True,  tweet_mode = 'extended')
 
+chosen = random.choice(commands)
+mystring = f""" {chosen}"""
+
 def tetris(api):
-    chosen = random.choice(commands)
-    mystring = f""" {chosen}"""
     for tweet in tweets:
         try:
             api.create_favorite(tweet.id)
