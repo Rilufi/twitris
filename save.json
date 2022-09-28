@@ -112,6 +112,24 @@
         5
       ],
       "rotation": 0,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟨",
+          "🟨"
+        ],
+        [
+          "🟨",
+          "🟨"
+        ]
+      ],
+      "position": [
+        -1,
+        4
+      ],
+      "rotation": 0,
       "fixed": false
     }
   ],
