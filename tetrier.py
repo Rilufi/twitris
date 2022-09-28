@@ -1,6 +1,7 @@
 from auth import api_cor, api_naso, api_gato
 import random
 import sys
+from time import sleep
 
 toReply = api_cor.me().screen_name
 commands = ['⬅️', '➡️', '⤴️']
@@ -16,6 +17,7 @@ def tetris(api):
         try:
             api.create_favorite(tweet.id)
             api.update_status("@" + toReply + mystring, in_reply_to_status_id = tweet.id)
+            sleep(1)
         except:
             print(api.me().screen_name + " já tinha comentado")
             pass
