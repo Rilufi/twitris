@@ -8,88 +8,94 @@ on:
       - completed
 
 jobs:
+  tweet:
+    name: Tweet
+    
+    runs-on: ubuntu-latest
 
-    build:
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+        
+      - name: Keep this repo alive
+        uses: gautamkrishnar/keepalive-workflow@master
 
-        runs-on: ubuntu-latest
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
 
+      - name: Cache Python packages 💾
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
 
-        steps:
+      - name: Install packages ⚙
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-            - uses: actions/checkout@v2
-            
-            - uses: gautamkrishnar/keepalive-workflow@master
+      # Use HEREDOC for `run` to escape possible single and double quotes in the message.
+      - name: comment Tetris next move 🐦
+        env:
+                  TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
 
-            - name: Make envfile
+                  TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
 
-              uses: SpicyPizza/create-envfile@v1
+                  TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
 
-              with:
+                  TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 
-                  envkey_TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+                  CONSUMER_KEY_XAME: ${{ secrets.CONSUMER_KEY_XAME }}
 
-                  envkey_TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+                  CONSUMER_SECRET_XAME: ${{ secrets.CONSUMER_SECRET_XAME }}
 
-                  envkey_TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
+                  ACCESS_TOKEN_XAME: ${{ secrets.ACCESS_TOKEN_XAME }}
 
-                  envkey_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+                  ACCESS_TOKEN_SECRET_XAME: ${{ secrets.ACCESS_TOKEN_SECRET_XAME }}
 
-                  envkey_CONSUMER_KEY_XAME: ${{ secrets.CONSUMER_KEY_XAME }}
+                  CONSUMER_KEY_COR: ${{ secrets.CONSUMER_KEY_COR }}
 
-                  envkey_CONSUMER_SECRET_XAME: ${{ secrets.CONSUMER_SECRET_XAME }}
+                  CONSUMER_SECRET_COR: ${{ secrets.CONSUMER_SECRET_COR }}
 
-                  envkey_ACCESS_TOKEN_XAME: ${{ secrets.ACCESS_TOKEN_XAME }}
+                  ACCESS_TOKEN_COR: ${{ secrets.ACCESS_TOKEN_COR }}
 
-                  envkey_ACCESS_TOKEN_SECRET_XAME: ${{ secrets.ACCESS_TOKEN_SECRET_XAME }}
+                  ACCESS_TOKEN_SECRET_COR: ${{ secrets.ACCESS_TOKEN_SECRET_COR }}
 
-                  envkey_CONSUMER_KEY_COR: ${{ secrets.CONSUMER_KEY_COR }}
+                  CONSUMER_KEY_GATO: ${{ secrets.CONSUMER_KEY_GATO }}
 
-                  envkey_CONSUMER_SECRET_COR: ${{ secrets.CONSUMER_SECRET_COR }}
+                  CONSUMER_SECRET_GATO: ${{ secrets.CONSUMER_SECRET_GATO }}
 
-                  envkey_ACCESS_TOKEN_COR: ${{ secrets.ACCESS_TOKEN_COR }}
+                  ACCESS_TOKEN_GATO: ${{ secrets.ACCESS_TOKEN_GATO }}
 
-                  envkey_ACCESS_TOKEN_SECRET_COR: ${{ secrets.ACCESS_TOKEN_SECRET_COR }}
+                  ACCESS_TOKEN_SECRET_GATO: ${{ secrets.ACCESS_TOKEN_SECRET_GATO }}
 
-                  envkey_CONSUMER_KEY_GATO: ${{ secrets.CONSUMER_KEY_GATO }}
+                  CONSUMER_KEY_NASO: ${{ secrets.CONSUMER_KEY_NASO }}
 
-                  envkey_CONSUMER_SECRET_GATO: ${{ secrets.CONSUMER_SECRET_GATO }}
+                  CONSUMER_SECRET_NASO: ${{ secrets.CONSUMER_SECRET_NASO }}
 
-                  envkey_ACCESS_TOKEN_GATO: ${{ secrets.ACCESS_TOKEN_GATO }}
+                  ACCESS_TOKEN_NASO: ${{ secrets.ACCESS_TOKEN_NASO }}
 
-                  envkey_ACCESS_TOKEN_SECRET_GATO: ${{ secrets.ACCESS_TOKEN_SECRET_GATO }}
+                  ACCESS_TOKEN_SECRET_NASO: ${{ secrets.ACCESS_TOKEN_SECRET_NASO }}
 
-                  envkey_CONSUMER_KEY_NASO: ${{ secrets.CONSUMER_KEY_NASO }}
+                  CONSUMER_KEY_MEVU: ${{ secrets.CONSUMER_KEY_MEVU }}
 
-                  envkey_CONSUMER_SECRET_NASO: ${{ secrets.CONSUMER_SECRET_NASO }}
+                  CONSUMER_SECRET_MEVU: ${{ secrets.CONSUMER_SECRET_MEVU }}
 
-                  envkey_ACCESS_TOKEN_NASO: ${{ secrets.ACCESS_TOKEN_NASO }}
+                  ACCESS_TOKEN_MEVU: ${{ secrets.ACCESS_TOKEN_MEVU }}
 
-                  envkey_ACCESS_TOKEN_SECRET_NASO: ${{ secrets.ACCESS_TOKEN_SECRET_NASO }}
+                  ACCESS_TOKEN_SECRET_MEVU: ${{ secrets.ACCESS_TOKEN_SECRET_MEVU }}
 
-                  envkey_CONSUMER_KEY_MEVU: ${{ secrets.CONSUMER_KEY_MEVU }}
+                  CONSUMER_KEY_UVA: ${{ secrets.CONSUMER_KEY_UVA }}
 
-                  envkey_CONSUMER_SECRET_MEVU: ${{ secrets.CONSUMER_SECRET_MEVU }}
+                  CONSUMER_SECRET_UVA: ${{ secrets.CONSUMER_SECRET_UVA }}
 
-                  envkey_ACCESS_TOKEN_MEVU: ${{ secrets.ACCESS_TOKEN_MEVU }}
+                  ACCESS_TOKEN_UVA: ${{ secrets.ACCESS_TOKEN_UVA }}
 
-                  envkey_ACCESS_TOKEN_SECRET_MEVU: ${{ secrets.ACCESS_TOKEN_SECRET_MEVU }}
+                  ACCESS_TOKEN_SECRET_UVA: ${{ secrets.ACCESS_TOKEN_SECRET_UVA }}
 
-                  envkey_CONSUMER_KEY_UVA: ${{ secrets.CONSUMER_KEY_UVA }}
-
-                  envkey_CONSUMER_SECRET_UVA: ${{ secrets.CONSUMER_SECRET_UVA }}
-
-                  envkey_ACCESS_TOKEN_UVA: ${{ secrets.ACCESS_TOKEN_UVA }}
-
-                  envkey_ACCESS_TOKEN_SECRET_UVA: ${{ secrets.ACCESS_TOKEN_SECRET_UVA }}
-
-
-                  file_name: .env
-
-
-
-            - name: Build the docker container
-              run: docker build .
-
-
-            - name: Run the script 🚀
-              run: docker-compose -f docker-compose-twitris.yml up
+        run: python tetrier.py
