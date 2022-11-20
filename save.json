@@ -90,6 +90,26 @@
         2
       ],
       "rotation": 4,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟪",
+          "🟪",
+          "🟪"
+        ],
+        [
+          null,
+          "🟪",
+          null
+        ]
+      ],
+      "position": [
+        -1,
+        2
+      ],
+      "rotation": 3,
       "fixed": false
     }
   ],
