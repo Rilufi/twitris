@@ -76,6 +76,24 @@
         0
       ],
       "rotation": 8,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟨",
+          "🟨"
+        ],
+        [
+          "🟨",
+          "🟨"
+        ]
+      ],
+      "position": [
+        -1,
+        4
+      ],
+      "rotation": 3,
       "fixed": false
     }
   ],
