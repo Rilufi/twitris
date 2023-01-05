@@ -128,6 +128,26 @@
         1
       ],
       "rotation": 4,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟦",
+          null,
+          null
+        ],
+        [
+          "🟦",
+          "🟦",
+          "🟦"
+        ]
+      ],
+      "position": [
+        -1,
+        1
+      ],
+      "rotation": 3,
       "fixed": false
     }
   ],
