@@ -172,6 +172,24 @@
         3
       ],
       "rotation": 2,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟨",
+          "🟨"
+        ],
+        [
+          "🟨",
+          "🟨"
+        ]
+      ],
+      "position": [
+        -1,
+        0
+      ],
+      "rotation": 2,
       "fixed": false
     }
   ],
