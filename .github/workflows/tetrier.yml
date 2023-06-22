@@ -2,10 +2,10 @@ name: tetrier
 
 
 on:
-  workflow_run:
-    workflows: ["tweet"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["tweet"]
+#    types:
+#      - completed
 
 jobs:
   tweet:
