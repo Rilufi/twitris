@@ -34,6 +34,26 @@
         3
       ],
       "rotation": 1,
+      "fixed": true
+    },
+    {
+      "shape": [
+        [
+          "🟩",
+          "🟩",
+          null
+        ],
+        [
+          null,
+          "🟩",
+          "🟩"
+        ]
+      ],
+      "position": [
+        -1,
+        4
+      ],
+      "rotation": 1,
       "fixed": false
     }
   ],
