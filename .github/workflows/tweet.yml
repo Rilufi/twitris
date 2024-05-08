@@ -1,8 +1,8 @@
 name: Tweet
 
-on:
-  workflow_dispatch:
-  schedule:
+on: push
+  #workflow_dispatch:
+ # schedule:
  #   - cron: "*/5 * * * *"
 
 jobs:
